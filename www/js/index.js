@@ -36,6 +36,12 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        alert('trying reg');
+        window.onerror = function(msg, url, linenumber) {
+            alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+            return true;
+        };
+
         pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
