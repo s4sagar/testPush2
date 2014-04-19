@@ -58,26 +58,26 @@ var app = {
 function try_reg() {
     alert('trying reg');
     pushNotification = window.plugins.pushNotification;
-    if ( device.platform == 'android' || device.platform == 'Android' )
-    {
+    // if ( device.platform == 'android' || device.platform == 'Android' )
+    // {
         pushNotification.register(
             successHandler,
             errorHandler, {
                 "senderID":"213694031514",
                 "ecb":"onNotificationGCM"
             });
-    }
-    else
-    {
-        pushNotification.register(
-            tokenHandler,
-            errorHandler, {
-                "badge":"true",
-                "sound":"true",
-                "alert":"true",
-                "ecb":"onNotificationAPN"
-            });
-    }
+    // }
+    // else
+    // {
+    //     pushNotification.register(
+    //         tokenHandler,
+    //         errorHandler, {
+    //             "badge":"true",
+    //             "sound":"true",
+    //             "alert":"true",
+    //             "ecb":"onNotificationAPN"
+    //         });
+    // }
 }
 // result contains any message sent from the plugin call
 function successHandler (result) {
