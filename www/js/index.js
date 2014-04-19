@@ -35,12 +35,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        alert('trying reg');
         window.onerror = function(msg, url, linenumber) {
             alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
             return true;
         };
+        app.receivedEvent('deviceready');
     },
 
     // Update DOM on a Received Event
@@ -53,6 +52,8 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        alert('trying reg');
         pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
