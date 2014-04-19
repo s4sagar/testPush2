@@ -35,7 +35,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        // app.receivedEvent('deviceready');
+        app.receivedEvent('deviceready');
         pushNotification = window.plugins.pushNotification;
         if ( device.platform == 'android' || device.platform == 'Android' )
         {
